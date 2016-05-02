@@ -47,7 +47,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container"> 
     <div ng-include="'views/instructions.html'"></div>
     <div ng-include="'views/bricks-a-bunch.html'" ng-controller="BricksABunchCtrl as bunchesStore"></div>
     <div ng-include="'views/lots-o-bricks.html'" ng-controller="LotsOBricksCtrl as lotsStore"></div>
@@ -69,9 +69,10 @@
 
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
   <script src="scripts/app.js"></script>
+  <script src="scripts/services/brickwarehouse.js"></script>
   <script src="scripts/controllers/bricks-a-bunch.js"></script>
   <script src="scripts/controllers/lots-o-bricks.js"></script>
-  <script src="scripts/services/brickwarehouse.js"></script>
+
   <!-- endbuild -->
 </body>
 </html>

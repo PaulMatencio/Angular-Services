@@ -35,6 +35,17 @@
         "quantity": 41,
         "price": 0.08
       }
-    }
+    },
+
+    "yellow" : {
+      "2x4": {
+        "quantity": 13,
+        "price": 0.04
+      },
+      "2x8": {
+        "quantity": 41,
+        "price": 0.08
+      }
+    }    
   }
 }

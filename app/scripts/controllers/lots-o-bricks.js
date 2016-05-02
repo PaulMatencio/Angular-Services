@@ -9,32 +9,31 @@
  */
 angular.module('serviceQuizApp')
   .controller('LotsOBricksCtrl', ['brickWarehouse',function (warehouse) {
+
     this.name = 'Lots O Bricks';
     var vm = this;
-
-
-        this.redBricks = warehouse.bricks.red;
-        this.blueBricks = warehouse.bricks.blue;
-        this.greenBricks = warehouse.bricks.green;
-
+    /*
     warehouse.getBricks().then( function(data) {
-      vm.readBricks = data.bricks.red;
+      vm.redBricks = data.bricks.red;
       vm.blueBricks = data.bricks.blue;
-      vm.greeBricks = data.bricks.green;
-      console.log(vm);
+      vm.greenBricks = data.bricks.green;
     }, function(reason){
       console.log(reason);
     });
+    */
+    vm.redBricks = warehouse.brick1.red;
+    vm.blueBricks = warehouse.brick1.blue;
+    vm.greenBricks = warehouse.brick1.green;
 
     this.addToCart = function(item) {
       if ( item.quantity > 0 ) {
-        item.quantity -=1;
+        item.quantity -= 1;
       }
     };
 
     this.removeFromCart = function(item) {
-        item.quantity +=1;
-
+        console.log(item);
+        item.quantity += 1;
     };
 
   }]);

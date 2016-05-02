@@ -6,29 +6,37 @@
     <p>Quantity: <span class="quantity">{{brick.quantity}}</span></p>
     <p>Price: {{brick.price}}</p>
     <div>
+      <p ng-if="brick.quantity < 5" class="highligth"> Coming soon </p>
       <p>Operation on Cart </p>
-      <button ng-click='lotsStore.addToCart(brick)'>Add</button>
-      <button ng-click='lotStore.removeFromCart(brick)'>Remove</button>
+      <button ng-click='lotsStore.addToCart(brick)'>+</button>
+      <button ng-click='lotsStore.removeFromCart(brick)'>-</button>
    </div>
   </div>
+</div>
+<div class="row bricksList">
   <div id="LoB-{{size}}" class="col-sm-4 well" ng-repeat="(size, brick) in lotsStore.blueBricks">
     <p>Size: Blue {{size}}</p>
     <p>Quantity: {{brick.quantity}}</p>
     <p>Price: {{brick.price}}</p>
     <div>
+      <p ng-if="brick.quantity < 5" class="highligth"> Coming soon </p>
       <p>Operation on Cart </p>
-      <button ng-click='lotsStore.addToCart(brick)'>Add</button>
-      <button ng-click='lotssStore.removeFromCart(brick)'>Remove</button>
+      <button ng-click='lotsStore.addToCart(brick)'>+</button>
+      <button ng-click='lotsStore.removeFromCart(brick)'>-</button>
    </div>
   </div>
+</div>
+
+<div class="row bricksList">
   <div id="LoB-{{size}}" class="col-sm-4 well" ng-repeat="(size, brick) in lotsStore.greenBricks">
     <p>Size: Green {{size}}</p>
     <p>Quantity: {{brick.quantity}}</p>
     <p>Price: {{brick.price}}</p>
     <div>
+      <p ng-if="brick.quantity < 5" class="highligth"> Coming soon </p>
       <p>Operation on Cart </p>
-      <button ng-click='lotsStore.addToCart(brick)'>Add</button>
-      <button ng-click='lotsStore.removeFromCart(brick)'>Remove</button>
+      <button ng-click='lotsStore.addToCart(brick)'>+</button>
+      <button ng-click='lotsStore.removeFromCart(brick)'-></button>
     </div>
   </div>
 </div>
