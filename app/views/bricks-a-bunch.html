@@ -1,9 +1,12 @@
 <h3>{{bunchesStore.name}} Store</h3>
-
 <ul class="row bricksList">
   <li id="BaB-{{size}}" class="col-sm-3 well brick-{{size}}" ng-repeat="(size, brick) in bunchesStore.redBricks">
-    <p>Size: {{size}}</p>
+    <p>Size: Red {{size}}</p>
     <p>Quantity: <span class="quantity">{{brick.quantity}}</span></p>
     <p>Price: {{brick.price}}</p>
-  </li>
+    <div>
+      <p>Operation on Cart </p>
+      <button ng-click='bunchesStore.addToCart(brick)'>Add</button>
+      <button ng-click='bunchesStore.removeFromCart(brick)'>Remove</button>
+   </div>
 </ul>

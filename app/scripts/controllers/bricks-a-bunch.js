@@ -8,21 +8,29 @@
  * Controller of the serviceQuizApp
  */
 angular.module('serviceQuizApp')
-  .controller('BricksABunchCtrl', function () {
-    this.name = 'Bricks A Bunch';
+  .controller('BricksABunchCtrl', ['brickWarehouse',function(warehouse) {
+      this.name = 'Bricks A Brunch';
+      var vm = this; // view model
 
-    this.redBricks = {
-      '1x1': {
-        quantity: 13,
-        price: 0.01
-      },
-      '2x2': {
-        quantity: 48,
-        price: 0.03
-      },
-      '2x6': {
-        quantity: 9,
-        price: 0.05
-      }
-    };
-  });
+      this.redBricks = warehouse.bricks.red;
+
+      warehouse.getBricks().then( function(data) {
+        vm.readBricks = data.bricks.red;
+        console.log(vm);
+      }, function(reason){
+        console.log(reason);
+      });
+
+      this.redBricks = warehouse.bricks.red;
+
+      this.addToCart = function(item) {
+        if ( item.quantity > 0 ) {
+          item.quantity -=1;
+        }
+      };
+
+      this.removeFromCart = function(item) {
+          item.quantity +=1;
+
+      };
+  }]);
